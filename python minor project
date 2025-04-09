@@ -1,0 +1,19 @@
+import random
+
+def roll_dice(sides):
+    return random.randint(1, sides)
+
+while True:
+    try:
+        sides = int(input("Enter the number of sides on the dice (e.g., 6 for a standard die): "))
+        rolls = int(input("Enter how many times you want to roll: "))
+
+        for i in range(rolls):
+            print(f"Roll {i+1}: {roll_dice(sides)}")
+
+        again = input("Roll again? (y/n): ").strip().lower()
+        if again != 'y':
+            print("Thanks for playing!")
+            break
+    except ValueError:
+        print("Please enter a valid number.")
